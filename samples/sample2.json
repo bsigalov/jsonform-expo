@@ -1,0 +1,57 @@
+{
+  "fields": [
+    {
+      "id": "firstName",
+      "type": "input",
+      "subtype": "string",
+      "value": "",
+      "label": "First Name",
+      "enabled": true,
+      "required": true,
+      "events": {
+        "onChangeText": "(function(){return function al(e, values){if (e == 'test'){ fetch('https://randomuser.me/api/?results=5').then(response=>response.json()).then(ret=>setSampleText2(JSON.stringify(ret)))} setSampleText1(`${props.values.firstName} ${props.values.age}`)}})();"
+      },
+      "style": {
+        "color": "green",
+        "borderBottomColor": "blue"
+      }
+    },
+    {
+      "id": "namelabel",
+      "type": "label"
+    },
+    {
+      "id": "age",
+      "type": "input",
+      "subtype": "number",
+      "label": "Age",
+      "enabled": true,
+      "value": 10,
+      "minValue": 0,
+      "maxValue": 100,
+      "required": true,
+      "events": {
+        "onChangeText": "(function(){return function al(e, props){setSampleText1('another sample text and current value: ' + e);if(e == 33){setFieldValue('isSmoke',true);} if(e == 22){setFieldValue('isSmoke',false); }if(e > 55){handleSubmit();} console.log(props.values);};})();"
+      }
+    },
+    {
+      "id": "isSmoke",
+      "type": "input",
+      "label": "Smoking?",
+      "subtype": "checkbox",
+      "enabled": true,
+      "value": false,
+      "required": true
+    },
+    {
+      "id": "isSmokeAge",
+      "type": "input",
+      "subtype": "number",
+      "label": "How long?",
+      "value": 0,
+      "enabled": true,
+      "depenedOn": ["isSmoke", true],
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "id": "name",
+      "type": "input",
+      "subtype": "string",
+      "value": "",
+      "label": "Name",
+      "enabled": true,
+      "required": true
+    },
+    {
+      "id": "email",
+      "type": "input",
+      "subtype": "email",
+      "value": "",
+      "label": "Email",
+      "enabled": true,
+      "required": true
+    },
+    {
+      "id": "age",
+      "type": "input",
+      "subtype": "number",
+      "label": "Age",
+      "enabled": true,
+      "value": 10,
+      "minValue": 0,
+      "maxValue": 100,
+      "required": true
+    },
+    {
+      "id": "isSmoke",
+      "type": "input",
+      "label": "Smoking?",
+      "subtype": "checkbox",
+      "enabled": true,
+      "value": false,
+      "required": true
+    },
+    {
+      "id": "isSmokeAge",
+      "type": "input",
+      "subtype": "number",
+      "label": "How long?",
+      "value": 0,
+      "enabled": true,
+      "depenedOn": ["isSmoke", true],
+      "required": true
+    }
+  ]
+}
