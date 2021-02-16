@@ -21,19 +21,19 @@ const App: () => React$Node = () => {
   const [sampleText1, setSampleText1] = React.useState("sampleText");
   const [sampleText2, setSampleText2] = React.useState("sampleText2");
 
-  React.useEffect(() => {
-    fetch(
-      "https://gist.githubusercontent.com/cernik/aebe78133d2e0fbfc64c974993d3c308/raw/46917e01f15af765a18d6b220ab79003be316936/sample.json"
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        console.log("json", json);
-        setSample(json);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // React.useEffect(() => {
+  //   fetch(
+  //     "https://gist.githubusercontent.com/cernik/aebe78133d2e0fbfc64c974993d3c308/raw/46917e01f15af765a18d6b220ab79003be316936/sample.json"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       console.log("json", json);
+  //       setSample(json);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   const renderField = (field, props) => {
     const {

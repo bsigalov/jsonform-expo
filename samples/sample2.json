@@ -5,11 +5,26 @@
       "type": "input",
       "subtype": "string",
       "value": "",
-      "label": "First Name",
+      "label": "First Name:",
       "enabled": true,
       "required": true,
       "events": {
-        "onChangeText": "(function(){return function al(e, values){if (e == 'test'){ fetch('https://randomuser.me/api/?results=5').then(response=>response.json()).then(ret=>setSampleText2(JSON.stringify(ret)))} setSampleText1(`${props.values.firstName} ${props.values.age}`)}})();"
+        "onChangeText": "(function(){return function al(e, values){if (e == 'test'){ fetch('https://randomuser.me/api/?results=5').then(response=>response.json()).then(ret=>setSampleText2(JSON.stringify(ret)))}; setFieldValue('lastName','boris'); setSampleText1(`${props.values.firstName} ${props.values.age}`)}})();"
+      },
+      "style": {
+        "color": "green",
+        "borderBottomColor": "blue"
+      }
+    },
+    {
+      "id": "lastName",
+      "type": "input",
+      "subtype": "string",
+      "value": "",
+      "label": "Last Name",
+      "enabled": true,
+      "required": true,
+      "events": {
       },
       "style": {
         "color": "green",
